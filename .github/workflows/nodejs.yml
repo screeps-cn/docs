@@ -29,4 +29,12 @@ jobs:
           cd api
           npm run generate
           cd .. 
+          
+    - name: Push Docs
+      run: |
+        cd ./public
+        git init
+        git add --all .
+        git commit -m "Github Action Auto Builder"
+        git push --quiet --force https://${{ secrets.GH_TOKEN }}@github.com/screeps-cn/screeps-cn.github.io.git master
 
