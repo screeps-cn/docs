@@ -1,6 +1,9 @@
-name: Node.js CI
+name: Github Action Auto Builder
 
-on: [push]
+on:
+  push:
+    branches:    
+      - master 
 
 jobs:
   build:
