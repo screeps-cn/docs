@@ -2,7 +2,7 @@
 
 该文档是 [Screeps 官方文档](https://docs.screeps.com) 的中文汉化版本 (zh-CN)，由 Screeps 中国玩家自发创建并维护。欢迎加入我们的 Q 群 [Screeps 编程游戏小组](https://shang.qq.com/wpa/qunwpa?idkey=8d9a9245519f3ecc94b23fbdada6d6479d8a3330071e0d44f372bb63a372a083)。
 
-![](https://travis-ci.org/screeps-cn/docs.svg?branch=master)
+![](https://github.com/screeps-cn/docs/actions?query=workflow%3ABuild+branch%3Amaster)
 
 Click [here](./README.en-US.md) to visit English readme.
 
