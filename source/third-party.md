@@ -99,6 +99,6 @@ Screeps 是不断运行的，作为玩家不可能看到每件事的发生。还
 javascript 拓展插件，需要提前安装诸如 [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=en) 和 [Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/) 之类的基础插件。
 
 *   [Alliance Overlay](https://raw.githubusercontent.com/LeagueOfAutomatedNations/loan-browser-ext/master/dist/alliance-overlay.user.js) 将 [League of Automated Nations](http://www.leagueofautomatednations.com/map) 的相关信息显示在游戏地图上。
-*   [Room Claim Assistant](https://github.com/Esryok/screeps-browser-ext/raw/master/room-claim-assistant.user.js) 颜色拓展了 "Owner Control Level" 来使得房间的选择更加轻松。它将 mineral 添加到了视图中，将拥有两个 source 的房间标记为绿色，已占领或已预订的房间标记为红色，被其他玩家“签名”的房间将标记为橙色。
+*   [Room Claim Assistant](https://github.com/Esryok/screeps-browser-ext/raw/master/room-claim-assistant.user.js) 颜色拓展了 "Claimable" 来使得房间的选择更加轻松。它将 mineral 添加到了视图中，将拥有两个 source 的房间标记为绿色，已占领或已预订的房间标记为红色，被其他玩家“签名”的房间将标记为橙色。
 *   [Visible Room Tracker](https://github.com/Esryok/screeps-browser-ext/blob/master/visible-room-tracker.user.js) 会自动设置您当前查看房间的 memory，使您能够完成诸如”仅在需要时打开可视化“之类的操作。
 *   [ScreepsSC](https://github.com/stybbe/Screeps-SC) 是一个 Chrome 扩展程序，它添加了新功能并在 Screeps 网站上提供了更多信息。 一些功能包括使市场历史更具可读性，添加战斗雷达，让用户查看其他玩家的 creep 名字以及优化排行榜。
