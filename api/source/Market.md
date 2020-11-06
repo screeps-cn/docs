@@ -220,7 +220,7 @@ params : object
     <li>
         <div class="api-arg-title">resourceType</div>
         <div class="api-arg-type">string</div>
-        <div class="api-arg-desc"><code>RESOURCE_*</code> 常量之一或者 <code>SUBSCRIPTION_TOKEN</code>。如果您的终端暂时没有指定类型的资源，则该订单将暂时是无效的。</div>
+        <div class="api-arg-desc"><code>RESOURCE_*</code> 常量之一或者为账户绑定资源（详见 <code>INTERSHARD_RESOURCES</code> 常量）。如果您的终端暂时没有指定类型的资源，则该订单将暂时是无效的。</div>
     </li>
     <li>
         <div class="api-arg-title">price</div>
@@ -235,7 +235,7 @@ params : object
     <li>
         <div class="api-arg-title">roomName (可选)</div>
         <div class="api-arg-type">string</div>
-        <div class="api-arg-desc">创建订单时要指定的房间。您必须在该房间中拥有属于您的终端（Terminal）。否则该订单将是暂时无效的。当 <code>resourceType</code> 参数的值为 <code>SUBSCRIPTION_TOKEN</code> 时可以忽略该项。</div>
+        <div class="api-arg-desc">创建订单时要指定的房间。您必须在该房间中拥有属于您的终端（Terminal）。否则该订单将是暂时无效的。当 <code>resourceType</code> 参数的值为账户绑定资源时可以忽略该项（详见 <code>INTERSHARD_RESOURCES</code> 常量）。</div>
     </li>        
 </ul>
 {% endapi_method_params %}
@@ -285,7 +285,7 @@ amount : number
 要转移的资源数量。
 ===
 yourRoomName (可选) : string
-您的某个房间名称，该房间应该存在有包含足够能量的可用终端。当订单的资源类型为 <code>SUBSCRIPTION_TOKEN</code> 时无需填写该参数。
+您的某个房间名称，该房间应该存在有包含足够能量的可用终端。当订单的资源类型为账户绑定资源时无需填写该参数（详见 <code>INTERSHARD_RESOURCES</code> 常量） 。
 {% endapi_method_params %}
 
 
@@ -400,7 +400,7 @@ filter (可选) : object, function
 `created` | 订单创建时的游戏 tick。inter-shard 市场中的订单不存在该属性。
 `createdTimestamp` | 订单创建时的 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getTime#Syntax">UNIX 毫秒时间戳</a>。老版本的订单不存在该属性。
 `type` | <code>ORDER_SELL</code> 或 <code>ORDER_BUY</code>。
-`resourceType` | <code>RESOURCE_*</code> 常量之一或者 <code>SUBSCRIPTION_TOKEN</code>。
+`resourceType` | <code>RESOURCE_*</code> 常量之一或者为账户绑定资源 （详见 <code>INTERSHARD_RESOURCES</code> 常量）。
 `roomName` | 下订单的房间。
 `amount` | 当前可用的交易量。
 `remainingAmount` | 该订单还可以交易多少资源。(How many resources are left to trade via this order.)
