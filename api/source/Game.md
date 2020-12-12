@@ -283,12 +283,12 @@ ERR_NOT_ENOUGH_RESOURCES | 您的账户没有足够的 `cpuUnlock` 资源。
 {% api_method Game.cpu.generatePixel '' 3 %}
 
 ```javascript
-if(Game.cpu.bucket > 9000) {
+if(Game.cpu.bucket == 10000) {
     Game.cpu.generatePixel();
 }
 ```
 
-从您的 bucket 中取出 5000 CPU 来生成一点 pixel 资源。
+从您的 bucket 中取出 10000 CPU 来生成一点 pixel 资源。
 
 
 {% api_return_codes %}
