@@ -353,7 +353,7 @@ opts (可选) : object
     <li>
         <div class="api-arg-title">ignoreCreeps</div>
         <div class="api-arg-type">boolean</div>
-        <div class="api-arg-desc">将其他 creep 所处的地块视作可通行的。在附件有大量移动的 creep 或者其他一些情况时会很有用。默认值为 false。</div>
+        <div class="api-arg-desc">将其他 creep 所处的地块视作可通行的。在附近有大量移动的 creep 或者其他一些情况时会很有用。默认值为 false。</div>
     </li>
     <li>
         <div class="api-arg-title">ignoreDestructibleStructures</div>
