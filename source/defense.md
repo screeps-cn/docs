@@ -13,7 +13,7 @@ Screeps 的世界危机重重，本文主要介绍保卫自己的领土不受入
 
     Game.rooms.W1N1.controller.activateSafeMode()
 
-每一次升级时 controller 都会获得一次激活激活。除此之外还可以借助 ghodium 资源通过 [`Creep.generateSafeMode`](/api/#Creep.generateSafeMode) 增加激活次数.
+每一次升级时 controller 都会获得一次激活。除此之外还可以借助 ghodium 资源通过 [`Creep.generateSafeMode`](/api/#Creep.generateSafeMode) 增加激活次数。
 
 安全模式是 GG 前的最后一道防线，但是每个玩家在一个镜像世界同时最多只能有一个房间处于安全模式，因此不能依赖安全模式用来防御，而应该使用墙、城墙、塔、creep 来构建房间的防御体系。
 
