@@ -42,9 +42,7 @@ Screeps 的交易系统本质是由终端（Terminal）收发的市场中间人�
 
 ## NPC 终端（NPC Terminals）
 
-Sector 间的“十字路口”（比如，房间 W0N0，W10N0，W10N10，等），都有 NPC 终端。
-玩家可像与其他玩家交易一样，通过 [`Game.market`](/api/#Game.market) 与 NPC 交易。
-尽管 NPC 开出的价格并不是很有竞争力，但不偿为快速买卖资源的方法。
+Sector 间的“十字路口”（比如，房间 W0N0，W10N0，W10N10，等），都有 NPC 终端。玩家可像与其他玩家交易一样，通过 [`Game.market`](/api/#Game.market) 与 NPC 交易。NPC 终端中的订单都存在一定的数量上限，并且会按照一组规则进行补充。尽管 NPC 开出的价格并不是很有竞争力，但您可以由此将您采集到的资源快速兑换成 credit，反之亦然。
 
 ## 订阅代币（Subscription Tokens）
 

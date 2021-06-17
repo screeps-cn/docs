@@ -4,7 +4,7 @@ title: 使用外部工具提交代码
 Screeps 拥有一个小巧的嵌入式编辑器来方便代码的编写。但是，在某些情况下（例如，您想使用 JavaScript 以外的语言或者想使用您的 IDE），您可能不得不使用其他方式将代码从外部提交至您的 Screeps 账户。
  
 {% note info %}
-如果您是使用 GitHub 完成注册的，则必须先在[帐户设置](https://screeps.com/a/#!/account)中设置 Screeps 的登录密码之后才能使用外部同步。
+您需要先在 [帐户设置](https://screeps.com/a/#!/account/auth-tokens) 中创建一个登录令牌（auth token）来使用外部提交。
 {% endnote %}
 
 ## 使用 Grunt 任务
@@ -23,9 +23,9 @@ Screeps 拥有一个小巧的嵌入式编辑器来方便代码的编写。但是
             screeps: {
                 options: {
                     email: '<your e-mail>',
-                    password: '<your password>',
+                    token: '<your auth token>',
                     branch: 'default',
-                    ptr: false
+                    //server: 'season'
                 },
                 dist: {
                     src: ['dist/*.js']
