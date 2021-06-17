@@ -34,7 +34,7 @@ PowerCreep.create('PowerCreep1', POWER_CLASS.OPERATOR);
 
 {% api_method_params %}
 name : string
-新 power creep 的名字。
+新 power creep 的名字。最长不能超过 100 个字符。
 ===
 className : string
 新 power creep 的类型，`POWER_CLASS` 常量之一。
@@ -47,6 +47,7 @@ className : string
 {% api_return_codes %}
 OK | 这个操作已经成功纳入计划。
 ERR_NOT_ENOUGH_RESOURCES | 您的账户中没有足够的 Power Level。
+ERR_INVALID_ARGS | 指定的 power creep 名称超过长度，或者 power creep 的类型（class）无效。
 ERR_NAME_EXISTS | 指定的 power creep 名称已被使用。
 {% endapi_return_codes %} 
 

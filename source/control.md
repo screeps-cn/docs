@@ -5,7 +5,7 @@ title: 控制
 
 为了扩展你在游戏世界中的疆土，你需要提升的一个主要指标是 **Global Control Level**（GCL）。他的主要影响有：
 
-* **CPU 限制**。在官方服务器上，每个人开局有 20 个 CPU 的限制，只能控制少量的单位。如果你是订阅（氪金）用户，每提升一个 GCL 等级可以多获得 10 个 CPU 资源，直到达到最大的 300 CPU 限制。
+* **您的 CPU 限制**。在官方服务器上，您将在开始游戏时获得 20 点 CPU 限额，您可以用其控制少量的单位。如果您通过使用 “CPU Unlock” 来解除了您的 CPU 限额，那么每提升一个 GCL 等级就可以多获得 10 点 CPU 资源，直到达到最大的 300 CPU 限制。
 * **控制房间数量**。比如说你想要控制 3 个房间就需要 3 级的 GCL。
 
 
@@ -71,12 +71,12 @@ title: 控制
 <tr>
 <td>7</td>
 <td>10,935,000</td>
-<td>Roads, 5 Containers, 2 Spawns, 50 Extensions (100 容量), Ramparts (100M 最大生命值), Walls, 3 Towers, Storage, 4 Links, Extractor, 6 Labs, Terminal</td>
+<td>Roads, 5 Containers, 2 Spawns, 50 Extensions (100 容量), Ramparts (100M 最大生命值), Walls, 3 Towers, Storage, 4 Links, Extractor, 6 Labs, Terminal, Factory</td>
 </tr>
 <tr>
 <td>8</td>
 <td>—</td>
-<td>Roads, 5 Containers, 3 Spawns, 60 Extensions (200 容量), Ramparts (300M 最大生命值), Walls, 6 Towers, Storage, 6 Links, Extractor, 10 Labs, Terminal, Observer, Power Spawn</td>
+<td>Roads, 5 Containers, 3 Spawns, 60 Extensions (200 容量), Ramparts (300M 最大生命值), Walls, 6 Towers, Storage, 6 Links, Extractor, 10 Labs, Terminal, Factory, Observer, Power Spawn, Nuker</td>
 </tr>
 </tbody>
 </table>

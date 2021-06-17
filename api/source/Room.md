@@ -133,7 +133,7 @@ structureType : string
 <code>STRUCTURE_*</code> 常量之一。
 ===
 name (可选) : string
-建筑的名称，该建筑必须支持设置名字（当前仅有 spawn）。
+建筑的名称，该建筑必须支持设置名字（当前仅有 spawn）。最长不能超过 100 个字符。
 {% endapi_method_params %}
 
 
@@ -170,7 +170,7 @@ pos : object
 可以为 <a href="#RoomPosition">RoomPosition</a>  对象或任何包含 <a href="#RoomPosition">RoomPosition</a> 的对象。
 ===
 name (可选) : string
-新旗帜的名称。它应该是唯一的，即 <code>Game.flags</code> 不应该包含拥有相同名称(哈希键)的不同旗帜。如果未定义，则会生成随机名称。最长不得超过 60 字符。
+新旗帜的名称。它应该是唯一的，即 <code>Game.flags</code> 不应该包含拥有相同名称（哈希键）的其他旗帜。如果未定义，则会生成随机名称。最长不得超过 100 字符。
 ===
 color (可选) : string
 新旗帜的颜色。应为 <code>COLOR_*</code> 常量之一。默认值为 <code>COLOR_WHITE</code>。
@@ -185,7 +185,7 @@ secondaryColor (可选) : string
 新旗帜的名称，或者下列错误码之一：
 {% api_return_codes %}
 ERR_NAME_EXISTS | 该名称已被现有的旗帜使用。
-ERR_INVALID_ARGS | 位置或者颜色不正确。
+ERR_INVALID_ARGS | 位置、名称或者颜色不正确。
 ERR_FULL | 你放置了太多旗帜，每个玩家最多允许放置 10000 个旗帜。
 {% endapi_return_codes %}
 
@@ -264,6 +264,7 @@ opts (可选) : object
 `FIND_MINERALS` | Mineral | 所有矿床。
 `FIND_NUKES` | Nuke | 所有将落地的核弹。
 `FIND_TOMBSTONES` | Tombstone | 所有墓碑。
+`FIND_RUINS` | Ruin | 所有废墟。
 
 {% api_method findExitTo 'room' 3 %}
 

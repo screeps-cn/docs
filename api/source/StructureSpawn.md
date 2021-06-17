@@ -122,7 +122,7 @@ body : array&lt;string&gt;
 
 ===
 name (可选) : string
-新 creep 的名字。它应该是唯一的 creep 名称, 所以 <code>Game.creeps</code> 对象不应该包含另一个同名的 creep (hash key)。如果没有定义，将生成一个随机名称。
+新 creep 的名字。最长不能超过 100 个字符。它应该是唯一的 creep 名称, 所以 <code>Game.creeps</code> 对象不应该包含另一个同名的 creep (hash key)。如果没有定义，将生成一个随机名称。
 {% endapi_method_params %}
 
 
@@ -179,7 +179,7 @@ body : array&lt;string&gt;
 
 ===
 name (可选) : string
-新 creep 的名字。它应该是唯一的 creep 名称, 所以 <code>Game.creeps</code> 对象不应该包含另一个同名的 creep (hash key)。如果没有定义，将生成一个随机名称。
+新 creep 的名字。最长不能超过 100 个字符。它应该是唯一的 creep 名称, 所以 <code>Game.creeps</code> 对象不应该包含另一个同名的 creep (hash key)。如果没有定义，将生成一个随机名称。
 
 ===
 memory (可选) : any
@@ -244,7 +244,7 @@ body : array&lt;string&gt;
 
 ===
 name : string
-新 creep 的名字。它应是个独一无二的 creep 名以保证 <code>Game.creeps</code> 不含有重名的的 creep 。
+新 creep 的名字。最长不能超过 100 个字符。它应是个独一无二的 creep 名以保证 <code>Game.creeps</code> 不含有重名的的 creep 。
 
 ===
 opts (可选) : object
@@ -327,7 +327,7 @@ ERR_RCL_NOT_ENOUGH | 您的房间控制器级别不足以使用此 spawn。
 {% api_method renewCreep 'target' A %}
 
 
-增加目标 creep 的剩余生存时间。 目标应在相邻的方格处。spawn 不应忙于孵化过程。每次执行都会增加 creep 的计时器，根据此公式按 ticks 数计算：
+增加目标 creep 的剩余生存时间。目标应在相邻的方格处。spawn 不应忙于孵化过程，且不能包含 CLAIM 身体部件。每次执行都会增加 creep 的计时器，根据此公式按 ticks 数计算：
 
 ```javascript-content
 floor(600/body_size)
@@ -355,7 +355,7 @@ OK | 这个操作已经成功纳入计划。
 ERR_NOT_OWNER | 你不是该母巢 (spawn) 或者该 creep 的所有者。
 ERR_BUSY | 这个母巢 (spawn) 已经在孵化另一个 creep 了。
 ERR_NOT_ENOUGH_ENERGY | 这个母巢 (spawn) 和他的扩展 (extension) 包含的能量不足以孵化具有给定 body 的 creep。
-ERR_INVALID_TARGET | 指定的目标不是一个 creep 对象。
+ERR_INVALID_TARGET | 指定的目标不是一个 creep 对象，或者其携带有 CLAIM 身体部件。
 ERR_FULL | 目标计时器的时间已经满了。
 ERR_NOT_IN_RANGE | 目标 creep 太远了。
 ERR_RCL_NOT_ENOUGH | 您的房间控制器级别不足以使用此 spawn。

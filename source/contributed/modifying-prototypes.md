@@ -158,29 +158,29 @@ console.log.apply(console, myArguments);
 
 ### 其他例子
 
-#### [Spawn.createCreep](http://docs.screeps.com/api/#StructureSpawn.createCreep) - 自动命名
+#### [Spawn.createCreep](http://docs.screeps.com/api/#StructureSpawn.spawnCreep) - 自动命名
 当您有大量 creep 时，使用默认的自动命名可能会消耗大量 CPU。 自己命名它们不失为节省 CPU 的一种方法。
 ```javascript
-// 检查该方法是否已经被重写
-if (!StructureSpawn.prototype._createCreep) {
-    StructureSpawn.prototype._createCreep = StructureSpawn.prototype.createCreep;
-    
-    // 原始参数列表：createCreep(body, [name], [memory])
-    // 构造新的参数列表 createCreep(body, [memory])
-    StructureSpawn.prototype.createCreep = function(body, memory = {}) { 
+// 确保该方法还没有被复写
+if (!StructureSpawn.prototype._spawnCreep) {
+    StructureSpawn.prototype._spawnCreep = StructureSpawn.prototype.spawnCreep;
+
+    // 原先的函数签名：spawnCreep(body, name, opts)
+    // 设置一个新的函数签名：createCreep(body, opts)
+    StructureSpawn.prototype.spawnCreep = function(body, opts = {}) { 
         if (!Memory.myCreepNameCounter) Memory.myCreepNameCounter = 0;
         
         // 现在我们需要生成一个没有使用的名字
         let name;
-        let canCreate;
+        let dryRun;
         do {
             name = `c${Memory.creepNameCounter++}`;
-            canCreate = this.canCreateCreep(body, name);
-        } while (canCreate === ERR_NAME_EXISTS);
+            dryRun = this._spawnCreep(body, name, { ...opts, dryRun: true });
+        } while (dryRun !== ERR_NAME_EXISTS);
         
         // 现在我们调用原始方法并传入我们生成的名称，然后
-        // 返回原始返回值
-        return this._createCreep(body, name, memory);
+        // 向外传递原始返回值
+        return this._spawnCreep(body, name, opts);
     };
 }
 ```
