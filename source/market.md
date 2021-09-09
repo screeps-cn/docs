@@ -50,6 +50,6 @@ Sector 间的“十字路口”（比如，房间 W0N0，W10N0，W10N10，等）
 
 玩家可以像购买 CPU 订阅那样来购买订阅代币。购买后，订阅代币会直接被放入账号，并可像虚拟物品一样买卖。
 
-因此，如果一个玩家的代码够优秀的话，他/她将不用花一分钱就可以解锁完全的 CPU！同时，订阅代币也可通过 [Steam 社区市场](http://steamcommunity.com/market/listings/464350/Subscription%20Token) 进行交易，也就是说，您可以通过出售订阅代币来在 Steam 钱包里换取真正的钞票。
+因此，如果一个玩家的代码够优秀的话，他/她将不用花一分钱就可以解锁完全的 CPU！同时，订阅代币也可通过 [Steam 社区市场](http://steamcommunity.com/market/listings/464350/Subscription%20Token) 进行交易，也就是说，您可以通过出售订阅代币来在 Steam 钱包里换取真正的 money。
 
 [^计算公式]: /api/#Game.market.calcTransactionCost
