@@ -534,7 +534,7 @@ target : <a href="#Source">Source</a>, <a href="#Mineral">Mineral</a>, <a href="
 OK | 这个操作已经成功纳入计划。
 ERR_NOT_OWNER | 你不是该 creep 的所有者，或者其他玩家已经占领或者预定了该房间的控制器。
 ERR_BUSY | 这个 creep 依然在孵化中。
-ERR_NOT_FOUND | 未找到 extractor。你必须建造一个 extractor 来开采矿物。<a href="/minerals.html">了解更多</a>
+ERR_NOT_FOUND | 未找到 extractor。你必须建造一个 extractor 来开采矿物。<a href="/resources.html">了解更多</a>
 ERR_NOT_ENOUGH_RESOURCES | 目标中已经没有可采集的能量或者矿物。
 ERR_INVALID_TARGET | 目标不是有效的 source 或者 mineral 对象。
 ERR_NOT_IN_RANGE | 目标太远了。
