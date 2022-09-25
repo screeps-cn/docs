@@ -59,6 +59,6 @@ npm run server
 
 本项目和 Screeps-cn 社区完全自发维护，在此对这些做出过贡献的人们表示由衷的感谢！如果你曾经做出过贡献但是并没有在下面中找到你的名字，请及时联系我们：
 
-[LokiSharp](https://github.com/LokiSharp)，[ayoitsLuke](https://github.com/ayoitsLuke)，[HHpetra](https://github.com/HHpetra)，[foraphe](https://github.com/foraphe)，[fangxm](https://github.com/fangxm233)，[coldWater](https://github.com/forsaken628)，[SirCM](https://github.com/SirCM)，[HoPGoldy](https://github.com/HoPGoldy)，[趣味的吃](https://github.com/qwedc001)，[zkl2333](https://github.com/zkl2333)。
+[LokiSharp](https://github.com/LokiSharp)，[ayoitsLuke](https://github.com/Lujia-Cheng)，[HHpetra](https://github.com/HHpetra)，[foraphe](https://github.com/foraphe)，[fangxm](https://github.com/fangxm233)，[coldWater](https://github.com/forsaken628)，[SirCM](https://github.com/SirCM)，[HoPGoldy](https://github.com/HoPGoldy)，[趣味的吃](https://github.com/qwedc001)，[zkl2333](https://github.com/zkl2333)。
 
 *排名取决于参与日期。*
