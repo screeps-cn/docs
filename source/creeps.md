@@ -42,7 +42,7 @@ Spawn扩展的放置位置不重要，只需要和 Spawn 在一个房间里就�
 
 值得注意的是，没有搬运资源的 `CARRY` 部件是不会产生疲劳的。
 
-几个小例子：
+几个小例子，在平原上运动时（每个部件移动一格产生2点疲劳值）：
 
 *   Creep `[CARRY, WORK, MOVE]` 在没有搬运能量的时候一个 tick 可以跑 1 格，搬了能量以后 2 个 tick 才能跑 1 格。
 *   Creep `[TOUGH, ATTACK, ATTACK, MOVE, MOVE, MOVE]` 将以满速（1 个 tick 一格）行动。
