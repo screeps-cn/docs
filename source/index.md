@@ -15,7 +15,7 @@ title: 总览
 {% endindex_block %}  
 
 {% index_block "Discord 讨论组（英文）" "http://chat.screeps.com" %}
-从 Slack 讨论组加入游戏社区
+从 Discord 讨论组加入游戏社区
 {% endindex_block %}
 
 {% index_block "Screeps 编程游戏小组（中文）" "https://shang.qq.com/wpa/qunwpa?idkey=8d9a9245519f3ecc94b23fbdada6d6479d8a3330071e0d44f372bb63a372a083" %}
