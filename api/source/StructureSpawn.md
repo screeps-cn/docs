@@ -41,7 +41,7 @@
     </tr>
     <tr>
         <td><strong>Energy auto-regeneration</strong></td>
-        <td>当房间内的能量（所有的母巢和扩展中）低于300 时，母巢每 tick 会自动生存 1 单位的能量。</td>
+        <td>当房间内的能量（所有的母巢和扩展中）低于300 时，母巢每 tick 会自动生成 1 单位的能量。</td>
     </tr>
     </tbody>
 </table>
@@ -162,7 +162,7 @@ else {
     console.log('Spawn error: '+result);
 }
 ```
-启动 creep 孵化过程。所需的能量量可以从房间里的所有母巢和扩展中提取出来。
+启动 creep 孵化过程。所需的能量可以从房间里的所有母巢和扩展中提取出来。
 
 {% api_method_params %}
 body : array&lt;string&gt;
