@@ -214,7 +214,7 @@ for(const resourceType in creep.carry) {
 }
 ```
 
-Drop this resource on the ground.
+将资源丢弃到地上。
 
 {% api_method_params %}
 resourceType : string
