@@ -48,7 +48,7 @@ echo "deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.6 multiverse" 
 sudo apt update
 ```
 
-现在我们可以安装 MonboDB
+现在我们可以安装 MongoDB
 
 ```shell
 sudo apt-get install -y mongodb-org
