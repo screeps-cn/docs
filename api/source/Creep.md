@@ -364,6 +364,7 @@ ERR_FULL | You cannot claim more than 3 rooms in the Novice Area.
 ERR_NOT_IN_RANGE | The target is too far away.
 ERR_NO_BODYPART | There are no <code>CLAIM</code> body parts in this creep’s body.
 ERR_GCL_NOT_ENOUGH | Your Global Control Level is not enough.
+ERR_ACCESS_DENIED | You do not have access to this restricted shard. Use [`Game.shard.activateAccess`](#Game.shard.activateAccess) to activate access.
 {% endapi_return_codes %}
 
 
@@ -1050,6 +1051,7 @@ ERR_BUSY | The creep is still being spawned.
 ERR_INVALID_TARGET | The target is not a valid neutral controller object.
 ERR_NOT_IN_RANGE | The target is too far away.
 ERR_NO_BODYPART | There are no <code>CLAIM</code> body parts in this creep’s body.
+ERR_ACCESS_DENIED | You do not have access to this restricted shard. Use [`Game.shard.activateAccess`](#Game.shard.activateAccess) to activate access.
 {% endapi_return_codes %}
 
 
@@ -1221,6 +1223,7 @@ ERR_NOT_ENOUGH_RESOURCES | The creep does not have any carried energy.
 ERR_INVALID_TARGET | The target is not a valid controller object, or the controller upgrading is blocked.
 ERR_NOT_IN_RANGE | The target is too far away.
 ERR_NO_BODYPART | There are no <code>WORK</code> body parts in this creep’s body.
+ERR_ACCESS_DENIED | You do not have access to this restricted shard. Use [`Game.shard.activateAccess`](#Game.shard.activateAccess) to activate access.
 {% endapi_return_codes %}
 
 

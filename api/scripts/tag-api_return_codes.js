@@ -18,6 +18,7 @@
    ERR_NOT_ENOUGH_EXTENSIONS: -6,
    ERR_RCL_NOT_ENOUGH: -14,
    ERR_GCL_NOT_ENOUGH: -15,
+   ERR_ACCESS_DENIED: -16,
  };
 
 hexo.extend.tag.register('api_return_codes', function(args, content) {
