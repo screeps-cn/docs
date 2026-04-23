@@ -74,10 +74,12 @@ marked:
 
 GlobalObjects:
   - Game.md
+  - Cpu.md
   - InterShardMemory.md
   - Map.md
   - MapVisual.md
   - Market.md
+  - Shard.md
   - Memory.md
   - PathFinder.md
   - RawMemory.md
