@@ -119,7 +119,7 @@ ERR_RCL_NOT_ENOUGH | 房间控制等级不足。
 
 {% api_method_params %}
 target : <a href="#Creep">Creep</a>, <a href="#PowerCreep">PowerCreep</a>
-The target object.
+目标对象。
 {% endapi_method_params %}
 
 

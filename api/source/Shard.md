@@ -15,7 +15,7 @@ shard 的名称。
 
 
 
-目前总是等于 `normal`.
+目前总是等于 `normal`。
 
 
 
@@ -50,7 +50,7 @@ if(Game.shard.access && Game.shard.accessTime && ((Game.shard.accessTime - Date.
 }
 ```
 
-激活对当前受限 shard 30天的访问授权。 此方法将消耗一个 [`ACCESS_KEY`](#Constants) 资源，具体信息参阅 [`Game.resources`](#Game.resources)。 这个方法仅适用于受限的 shard (定义 `Game.shard.access` 时).
+激活对当前受限 shard 30天的访问授权。 此方法将消耗一个 [`ACCESS_KEY`](#Constants) 资源（详见 [`Game.resources`](#Game.resources)）。 这个方法仅适用于受限的 shard (定义了 `Game.shard.access` 的 shard)。
 
 ### 返回值
 
