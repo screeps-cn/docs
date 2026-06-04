@@ -1,13 +1,13 @@
 # Game.cpu
 
-A global object containing information about your CPU usage.
+一个包含 CPU 使用情况的全局对象。
 
 
 {% api_property Game.cpu.limit 'number' %}
 
 
 
-Your assigned CPU limit for the current shard.
+你在当前指定 shard 的CPU限制。
 
 
 
@@ -15,7 +15,7 @@ Your assigned CPU limit for the current shard.
 
 
 
-An amount of available CPU time at the current game tick. Usually it is higher than <code>Game.cpu.limit</code>. <a href="/cpu-limit.html">Learn more</a>
+当前游戏 tick 可用的 CPU 时间。 通常它高于 <code>Game.cpu.limit</code>。 <a href="/cpu-limit.html">了解更多</a>
 
 
 
@@ -23,7 +23,7 @@ An amount of available CPU time at the current game tick. Usually it is higher t
 
 
 
-An amount of unused CPU accumulated in your <a href="/cpu-limit.html#Bucket">bucket</a>.
+在你的 <a href="/cpu-limit.html#Bucket">bucket</a> 中累积的未使用的 CPU 数量。
 
 
 
@@ -31,7 +31,7 @@ An amount of unused CPU accumulated in your <a href="/cpu-limit.html#Bucket">buc
 
 
 
-An object with limits for each shard with shard names as keys. You can use [`setShardLimits`](#Game.cpu.setShardLimits) method to re-assign them.
+包含了每个 shard cpu 上限的对象，以 shard 名称为关键字。你可以使用 [`setShardLimits`](#Game.cpu.setShardLimits) 方法重设他们。
 
 
 
@@ -39,7 +39,7 @@ An object with limits for each shard with shard names as keys. You can use [`set
 
 
 
-Whether full CPU is currently unlocked for your account.
+您的账户是否已经解锁了完整的 CPU。
 
 
 
@@ -47,7 +47,7 @@ Whether full CPU is currently unlocked for your account.
 
 
 
-The time <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getTime#Syntax">in milliseconds since UNIX epoch time</a> until full CPU is unlocked for your account. This property is not defined when full CPU is not unlocked for your account or it's unlocked with a subscription.
+您账户解锁完整 CPU 时的 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getTime#Syntax">UNIX 毫秒时间戳</a> 当您账户的完整 CPU 未解锁或未使用 subscription 时该属性未定义。
 
 
 
@@ -58,13 +58,12 @@ let heap = Game.cpu.getHeapStatistics();
 console.log(`Used ${heap.total_heap_size} / ${heap.heap_size_limit}`);
 ```
 
-Use this method to get heap statistics for your virtual machine. The return value is almost identical to the Node.js function [`v8.getHeapStatistics()`](https://nodejs.org/dist/latest-v8.x/docs/api/v8.html#v8_v8_getheapstatistics). This function returns one additional property: `externally_allocated_size` which is the total amount of currently allocated memory which is not included in the v8 heap but counts against this isolate's memory limit. `ArrayBuffer` instances over a certain size are externally allocated and will be counted here.
+使用该方法获取虚拟机的堆统计数据。其返回值与 Node.js 函数 [`v8.getHeapStatistics()`](https://nodejs.org/dist/latest-v8.x/docs/api/v8.html#v8_v8_getheapstatistics) 几乎相同。此函数返回一个附加属性：`externally_allocated_size` 是当前分配的内存总量，不包含在 v8 堆中，但计入了此隔离区的内存限制。超过一定大小的 `ArrayBuffer` 实例是外部分配的，将计入此处。
 
 
+### 返回值
 
-### Return value
-
-Returns an objects with heap statistics in the following format:
+返回堆栈统计数据对象，格式如下:
 
 ```javascript-content
 {
@@ -102,13 +101,12 @@ for(const name in Game.creeps) {
 
 ```
 
-Get amount of CPU time used from the beginning of the current game tick. Always returns 0 in the Simulation mode.
+获取当前游戏开始时使用的 CPU 时间。在模拟模式下始终返回 0。
 
 
+### 返回值
 
-### Return value
-
-Returns currently used CPU time as a float number.
+以浮点数形式返回当前使用的 CPU 时间。
 
 
 {% api_method Game.cpu.halt '' 1 %}
@@ -117,7 +115,7 @@ Returns currently used CPU time as a float number.
 Game.cpu.halt();
 ```
 
-Reset your runtime environment and wipe all data in heap memory.
+重置运行环境，清除堆内存中的所有数据。
 
 {% api_method Game.cpu.setShardLimits 'limits' 1 %}
 
@@ -125,22 +123,21 @@ Reset your runtime environment and wipe all data in heap memory.
 Game.cpu.setShardLimits({shard0: 20, shard1: 10});
 ```
 
-Allocate CPU limits to different shards. Total amount of CPU should remain equal to 
- [`Game.cpu.shardLimits`](#Game.cpu.shardLimits). This method can be used only once per 12 hours.
-
+为不同分区分配 CPU 限制。CPU 总量应保持等于
+ [`Game.cpu.shardLimits`](#Game.cpu.shardLimits)。 该方法每12小时只能使用一次。
 {% api_method_params %}
 limits : object&lt;string, number&gt;
-An object with CPU values for each shard in the same format as `Game.cpu.shardLimits`.
+与 `Game.cpu.shardLimits` 格式相同，包含每个分块的 CPU 值。
 {% endapi_method_params %}
 
 
-### Return value
+### 返回值
 
-One of the following codes:
+如下错误码之一:
 {% api_return_codes %}
-OK | The operation has been scheduled successfully.
-ERR_BUSY | 12-hours cooldown period is not over yet.
-ERR_INVALID_ARGS | The argument is not a valid shard limits object.
+OK | 这个操作已经成功纳入计划。
+ERR_BUSY | 12小时冷却未结束。
+ERR_INVALID_ARGS | 参数不是有效的分区限制对象。
 {% endapi_return_codes %}
 
 
@@ -152,16 +149,16 @@ if(Game.cpu.unlockedTime && ((Game.cpu.unlockedTime - Date.now()) < 1000*60*60*2
 }
 ```
 
-Unlock full CPU for your account for additional 24 hours. This method will consume 1 CPU unlock bound to your account (See [`Game.resources`](#Game.resources)).
-If full CPU is not currently unlocked for your account, it may take some time (up to 5 minutes) before unlock is applied to your account.
+为您的账户解锁全部 CPU，持续 24 小时。此方法将消耗 1 个绑定到您账户的 CPU 解锁，具体信息参阅 [`Game.resources`](#Game.resources)。
+如果您的账户当前尚未解锁全部 CPU，则可能需要一些时间（最长 5 分钟）才能将解锁应用到您的账户。
 
-### Return value
+### 返回值
 
-One of the following codes:
+如下错误码之一:
 {% api_return_codes %}
-OK | The operation has been scheduled successfully.
-ERR_FULL | Your CPU is unlocked with a subscription.
-ERR_NOT_ENOUGH_RESOURCES | Your account does not have enough `cpuUnlock` resource.
+OK | 这个操作已经成功纳入计划。
+ERR_FULL | 您的 CPU 已通过订购解锁。
+ERR_NOT_ENOUGH_RESOURCES | 您的帐户没有足够的 `cpuUnlock` 资源。
 {% endapi_return_codes %}
 
 {% api_method Game.cpu.generatePixel '' 3 %}
@@ -172,12 +169,12 @@ if(Game.cpu.bucket == 10000) {
 }
 ```
 
-Generate 1 pixel resource unit for 10000 CPU from your bucket.
+从你的 `bucket` 中为 10,000 个 CPU 生成一个 `pixel` 资源
 
-### Return value
+### 返回值
 
-One of the following codes:
+如下错误码之一:
 {% api_return_codes %}
-OK | The operation has been scheduled successfully.
-ERR_NOT_ENOUGH_RESOURCES | Your bucket does not have enough CPU.
+OK | 这个操作已经成功纳入计划。
+ERR_NOT_ENOUGH_RESOURCES | 你的 `bucket` 没有足够的 CPU 资源.
 {% endapi_return_codes %}

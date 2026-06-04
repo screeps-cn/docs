@@ -605,10 +605,10 @@ raw (可选) : boolean
     <tr>
         <td>`EVENT_POWER`</td>
         <td>
-            将一个 `creep` 的能量作用于指定目标.
+            将一个 `creep` 的 `power` 作用于指定目标.
             <ul>
                 <li>`targetId` - 目标对象的 ID</li>
-                <li>`power` - 使用能量的能力, PWR_* 常量之一</li>
+                <li>`power` - 使用 `power` 的能力, PWR_* 常量之一</li>
             </ul>
         </td>
     </tr>

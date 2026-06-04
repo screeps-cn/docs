@@ -140,7 +140,7 @@ const source = Game.getObjectById(creep.memory.sourceId);
 
 {% api_method_params %}
 id : string
-The unique identificator.
+唯一 ID。
 {% endapi_method_params %}
 
 

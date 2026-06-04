@@ -363,7 +363,7 @@ ERR_FULL | 你不能在新手区占领超过3个房间。
 ERR_NOT_IN_RANGE | 目标太远了。
 ERR_NO_BODYPART | 这个 creep 身上没有 <code>CLAIM</code> 部件。
 ERR_GCL_NOT_ENOUGH | 你的全局控制等级不足。
-ERR_ACCESS_DENIED | You do not have access to this restricted shard. Use [`Game.shard.activateAccess`](#Game.shard.activateAccess) to activate access.
+ERR_ACCESS_DENIED | 你无权访问此受限镜面， 使用 [`Game.shard.activateAccess`](#Game.shard.activateAccess) 激活访问权限。
 {% endapi_return_codes %}
 
 
@@ -1052,7 +1052,7 @@ ERR_BUSY | 这个 creep 依然在孵化中。
 ERR_INVALID_TARGET | 目标不是一个有效的中立房间控制器对象。
 ERR_NOT_IN_RANGE | 目标太远了。
 ERR_NO_BODYPART | 这个 creep 身上没有 <code>CLAIM</code> 部件。
-ERR_ACCESS_DENIED | You do not have access to this restricted shard. Use [`Game.shard.activateAccess`](#Game.shard.activateAccess) to activate access.
+ERR_ACCESS_DENIED | 你无权访问此受限镜面， 使用 [`Game.shard.activateAccess`](#Game.shard.activateAccess) 激活访问权限。
 {% endapi_return_codes %}
 
 
@@ -1224,7 +1224,7 @@ ERR_NOT_ENOUGH_RESOURCES | 这个creep没有携带任何能量。
 ERR_INVALID_TARGET | 目标不是有效的控制器对象，或控制器的升级被阻滞了。
 ERR_NOT_IN_RANGE | 目标太远了。
 ERR_NO_BODYPART | 这个 creep 身上没有 <code>WORK</code> 部件。
-ERR_ACCESS_DENIED | You do not have access to this restricted shard. Use [`Game.shard.activateAccess`](#Game.shard.activateAccess) to activate access.
+ERR_ACCESS_DENIED | 你无权访问此受限镜面， 使用 [`Game.shard.activateAccess`](#Game.shard.activateAccess) 激活访问权限。
 {% endapi_return_codes %}
 
 

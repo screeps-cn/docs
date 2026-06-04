@@ -669,7 +669,7 @@ for(const resourceType in creep.carry) {
 
 {% api_method_params %}
 target : <a href="#Creep">Creep</a>, <a href="#PowerCreep">PowerCreep</a>, <a href="#Structure">Structure</a>
-The target object.
+目标对象。
 ===
 resourceType : string
 <code>RESOURCE_*</code>常量之一。

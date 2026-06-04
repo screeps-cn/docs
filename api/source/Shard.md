@@ -1,13 +1,13 @@
 # Game.shard
 
-An object describing the world shard where your script is currently being executed in.
+描述当前执行脚本的 shard 对象。
 
 
 {% api_property Game.shard.name 'string' %}
 
 
 
-The name of the shard.
+shard 的名称。
 
 
 
@@ -15,7 +15,7 @@ The name of the shard.
 
 
 
-Currently always equals to `normal`.
+目前总是等于 `normal`.
 
 
 
@@ -23,7 +23,7 @@ Currently always equals to `normal`.
 
 
 
-Whether this shard belongs to the [PTR](/ptr.html).
+这个 shard 是否属于 [PTR](/ptr.html).
 
 
 
@@ -31,15 +31,14 @@ Whether this shard belongs to the [PTR](/ptr.html).
 
 
 
-Whether you currently have access to this shard. Always `true` on non-restricted shards. On restricted shards, requires either an active [`ACCESS_KEY`](#Constants) resource or an unlimited access subscription. Use [`Game.shard.activateAccess`](#Game.shard.activateAccess) to activate access.
-
+您当前是否有访问此 shard 的权限。 在非限制性 shard 上总是 `true`。在限制性 shards 上, 需要激活 [`ACCESS_KEY`](#Constants) 资源或激活无限访问权限。 使用 [`Game.shard.activateAccess`](#Game.shard.activateAccess) 激活访问。
 
 
 {% api_property Game.shard.accessTime 'number' %}
 
 
 
-The time <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getTime#Syntax">in milliseconds since UNIX epoch time</a> until access to this restricted shard is active. This property is not defined when access is unlimited or when access is not currently active.
+这个 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getTime#Syntax">UNIX毫秒时间戳</a> 为激活访问权限的时间。 无访问限制的 shard 或未激活访问权限时此属性未被定义。
 
 
 
@@ -51,14 +50,14 @@ if(Game.shard.access && Game.shard.accessTime && ((Game.shard.accessTime - Date.
 }
 ```
 
-Activate access to the current restricted shard for additional 30 days. This method will consume 1 [`ACCESS_KEY`](#Constants) resource bound to your account (See [`Game.resources`](#Game.resources)). This method is only available on restricted shards (when `Game.shard.access` is defined).
+激活对当前受限 shard 30天的访问授权。 此方法将消耗一个 [`ACCESS_KEY`](#Constants) 资源，具体信息参阅 [`Game.resources`](#Game.resources)。 这个方法仅适用于受限的 shard (定义 `Game.shard.access` 时).
 
-### Return value
+### 返回值
 
-One of the following codes:
+如下错误码之一:
 {% api_return_codes %}
-OK | The operation has been scheduled successfully.
-ERR_INVALID_TARGET | This shard is not restricted.
-ERR_FULL | Your access is unlimited.
-ERR_NOT_ENOUGH_RESOURCES | Your account does not have enough `accessKey` resource.
+OK | 这个操作已经成功纳入计划。
+ERR_INVALID_TARGET | 这个 shard 不受限。
+ERR_FULL | 你的访问权限是无限的。
+ERR_NOT_ENOUGH_RESOURCES | 你账户中的 `accessKey` 资源不足。
 {% endapi_return_codes %}
