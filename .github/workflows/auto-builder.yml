@@ -18,56 +18,56 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-    - name: Use Node.js 10.x
-      uses: actions/setup-node@v1
-      with:
-        node-version: 10.x
+      - name: Use Node.js 10.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10.x
 
-    - name: Cache node modules
-      uses: actions/cache@v1
-      id: cache
-      with:
-        path: node_modules
-        key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-node-
+      - name: Cache node modules
+        uses: actions/cache@v1
+        id: cache
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
 
-    - name: Cache API modules
-      uses: actions/cache@v1
-      id: cache-api
-      with:
-        path: api/node_modules
-        key: ${{ runner.os }}-node-api-${{ hashFiles('api/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-node-api-        
+      - name: Cache API modules
+        uses: actions/cache@v1
+        id: cache-api
+        with:
+          path: api/node_modules
+          key: ${{ runner.os }}-node-api-${{ hashFiles('api/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-api-        
 
-    - name: Install Dependencies
-      if: steps.cache.outputs.cache-hit != 'true'
-      run: npm install
+      - name: Install Dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm install
 
-    - name: Install API Dependencies
-      if: steps.cache-api.outputs.cache-hit != 'true'
-      run: |
-        cd api
-        npm install
-        cd ..
+      - name: Install API Dependencies
+        if: steps.cache-api.outputs.cache-hit != 'true'
+        run: |
+          cd api
+          npm install
+          cd ..
 
-    - name: Generate Docs
-      run: |
-        npm run generate
-        cd api
-        npm run generate
-        cd .. 
+      - name: Generate Docs
+        run: |
+          npm run generate
+          cd api
+          npm run generate
+          cd .. 
 
-    - name: Upload GitHub Pages artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: github-pages
-        path: public
-        retention-days: 1
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: github-pages
+          path: public
+          retention-days: 1
 
   deploy:
     runs-on: ubuntu-latest
@@ -75,27 +75,27 @@ jobs:
     needs: [ build ]
 
     steps:
-    - name: Download GitHub Pages artifact
-      uses: actions/download-artifact@v4
-      with:
-        name: github-pages
-        path: public
+      - name: Download GitHub Pages artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: github-pages
+          path: public
 
-    - name: Init Repo and Commit
-      run: |
-        cd ./public
-        git config --global user.email "nobody@github.com"
-        git config --global user.name "Github Action Auto Builder"
-        git init
-        git add --all .
-        git commit -m "Github Action Auto Builder"
+      - name: Init Repo and Commit
+        run: |
+          cd ./public
+          git config --global user.email "nobody@github.com"
+          git config --global user.name "Github Action Auto Builder"
+          git init
+          git add --all .
+          git commit -m "Github Action Auto Builder"
 
-    - name: Push Docs to Github Pages Repo
-      run: |
-        cd ./public
-        git push --quiet --force https://${{ secrets.PAGES_TOKEN }}@github.com/screeps-cn/screeps-cn.github.io.git master
+      - name: Push Docs to Github Pages Repo
+        run: |
+          cd ./public
+          git push --quiet --force https://${{ secrets.PAGES_TOKEN }}@github.com/screeps-cn/screeps-cn.github.io.git master
 
-    - name: Push Docs to Gitee Pages Repo
-      run: |
-        cd ./public
-        git push --quiet --force https://LokiSharp:${{ secrets.GITEE_TOKEN }}@gitee.com/screeps-cn/screeps-cn.git master
+      - name: Push Docs to Gitee Pages Repo
+        run: |
+          cd ./public
+          git push --quiet --force https://LokiSharp:${{ secrets.GITEE_TOKEN }}@gitee.com/screeps-cn/screeps-cn.git master
