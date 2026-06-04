@@ -57,10 +57,10 @@ Game.flags.Flag1.setColor(COLOR_GREEN, COLOR_WHITE);
 给旗帜设置一个新颜色
 
 {% api_method_params %}
-color : string
+color : number
 旗帜的主要颜色。<code>COLOR_*</code> 常量之一。
 ===
-secondaryColor (可选) : string
+secondaryColor (可选) : number
 旗帜的次要颜色。<code>COLOR_*</code> 常量之一。
 {% endapi_method_params %}
 

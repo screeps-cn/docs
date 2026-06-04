@@ -58,7 +58,7 @@ toRoom : string, <a href="#Room">Room</a>
 终点房间名或房间对象。
 ===
 opts (可选) : object
-包含寻路选项的对象。参见<code><a href="#findRoute">findRoute</a></code>。
+包含寻路选项的对象。参见<code><a href="#Game.map.findRoute">findRoute</a></code>。
 {% endapi_method_params %}
 
 

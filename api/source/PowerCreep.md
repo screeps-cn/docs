@@ -56,12 +56,12 @@ ERR_NAME_EXISTS | 指定的 power creep 名称已被使用。
 
 {% api_property carry object '{"deprecated": true}' %}
 
-[`Creep.store`](#Creep.store) 的别名。
+[`PowerCreep.store`](#PowerCreep.store) 的别名。
 
 
 {% api_property carryCapacity number '{"deprecated": true}' %}
 
-[`Creep.store.getCapacity()`](#Store.getCapacity) 的别名。
+[`PowerCreep.store.getCapacity()`](#Store.getCapacity) 的别名。
 
 {% api_property className string %}
 该 power creep 的类型，`POWER_CLASS` 常量之一。
@@ -668,7 +668,7 @@ for(const resourceType in creep.carry) {
 将资源从该 creep 转移至其他对象。目标必须在紧邻 creep 的正方形区域中。
 
 {% api_method_params %}
-target : <a href="#Creep">Creep</a>, <a href="#Structure">Structure</a>
+target : <a href="#Creep">Creep</a>, <a href="#PowerCreep">PowerCreep</a>, <a href="#Structure">Structure</a>
 The target object.
 ===
 resourceType : string
@@ -742,7 +742,7 @@ Game.powerCreeps['PowerCreep1'].usePower(PWR_OPERATE_SPAWN, Game.spawns['Spawn1'
 power : number
 要使用的 power 能力，`PWR_*`常量之一。
 ===
-target : <a href="#RoomObject">RoomObject</a>
+target (可选) : <a href="#RoomObject">RoomObject</a>
 房间中的指定目标。
 {% endapi_method_params %}
 
@@ -775,7 +775,7 @@ if(creep.withdraw(storage, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
 此方法不应该被用来在 creep 之间转移资源。想要在 creep 之间转移，请对携带资源的 creep 执行 [`transfer`](#Creep.transfer) 方法。
 
 {% api_method_params %}
-target : <a href="#Structure">Structure</a>, <a href="#Tombstone">Tombstone</a>
+target : <a href="#Structure">Structure</a>, <a href="#Tombstone">Tombstone</a>, <a href="#Ruin">Ruin</a>
 目标对象。
 ===
 resourceType : string
