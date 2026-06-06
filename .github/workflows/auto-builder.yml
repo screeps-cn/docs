@@ -68,9 +68,24 @@ jobs:
         git commit -m "Github Action Auto Builder"
 
     - name: Push Docs to Github Pages Repo
+      env:
+        GITHUB_PAGES_DEPLOY_KEY: ${{ secrets.PAGES_DEPLOY_KEY }}
       run: |
+        set -eu
+
+        if [ -z "$GITHUB_PAGES_DEPLOY_KEY" ]; then
+          echo "::error::Missing secret PAGES_DEPLOY_KEY"
+          exit 1
+        fi
+
+        install -m 700 -d ~/.ssh
+        printf '%s\n' "$GITHUB_PAGES_DEPLOY_KEY" > "$RUNNER_TEMP/github_pages_deploy_key"
+        chmod 600 "$RUNNER_TEMP/github_pages_deploy_key"
+        ssh-keyscan github.com >> ~/.ssh/known_hosts
+
         cd ./public
-        git push --quiet --force https://${{ secrets.PAGES_TOKEN }}@github.com/screeps-cn/screeps-cn.github.io.git master
+        GIT_SSH_COMMAND="ssh -i ${RUNNER_TEMP}/github_pages_deploy_key -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes" \
+          git push --quiet --force git@github.com:screeps-cn/screeps-cn.github.io.git master
 
     - name: Push Docs to Gitee Pages Repo
       run: |
