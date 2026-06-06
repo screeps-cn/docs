@@ -5,34 +5,52 @@ This is the Chinese version (zh-CN) of the [official Screeps documentation](http
 ![](https://travis-ci.org/screeps-cn/docs.svg?branch=master)
 
 
-点击 [此处](./README.en-US.md) 来访问中文 readme。
+点击 [此处](./README.md) 来访问中文 readme。
 
 ## Project dependence
 
-- Node.js: `8+`
-- npm: `Node.js` comes with version
+- Node.js: `20.20.2` is recommended. `14.x` is the minimum supported version, and `23.x` or newer is not supported for now.
+- npm: use the version bundled with the selected Node.js release.
+
+This project uses old dependencies. Confirm that the current Node.js version is compatible before installing:
+
+```bash
+node --version
+npm --version
+```
+
+For normal installs, prefer the lockfile:
+
+```bash
+npm ci
+npm --prefix api ci
+```
 
 ## Deploy and start
 
 ```bash
-sh start.sh
+npm start
 ```
 
 or
 
 ```bash
 # Install dependency
-npm install
-cd api
-npm install
+npm ci
+npm --prefix api ci
 
 # Build static site with hot-update
 npm run generate-watch &
-cd ..
-npm run generate-watch &
+(cd api && npm run generate-watch) &
 
 # start local server
 npm run server
+```
+
+To generate static files only:
+
+```bash
+npm run generate:all
 ```
 
 ## Contribution

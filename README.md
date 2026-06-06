@@ -8,30 +8,54 @@ Click [here](./README.en-US.md) to visit English readme.
 
 ## 项目依赖
 
-- Node.js: `8+`
-- npm: `Node.js` 自带版本即可
+- Node.js: 推荐 `20.20.2`，最低支持 `14.x`，暂不支持 `23.x` 及以上
+- npm: 使用当前 Node.js 自带版本即可
+
+本项目依赖较旧，请先确认当前 Node.js 版本兼容：
+
+```bash
+node --version
+npm --version
+```
+
+常规安装请优先使用 lockfile：
+
+```bash
+npm ci
+npm --prefix api ci
+```
+
+github 访问不稳定可以使用镜像安装脚本。
+
+```bash
+tools/install-low-network.sh
+```
 
 ## 部署并启动
 
 ```bash
-sh start.sh
+npm start
 ```
 
 或者 
 
 ```bash
 # 安装依赖
-npm install
-cd api
-npm install
+npm ci
+npm --prefix api ci
 
 # 构建带有热更新的静态站点
 npm run generate-watch &
-cd ..
-npm run generate-watch &
+(cd api && npm run generate-watch) &
 
 # 启动本地服务器
 npm run server
+```
+
+只需要生成静态文件时可运行：
+
+```bash
+npm run generate:all
 ```
 
 ## 参与 & 贡献
