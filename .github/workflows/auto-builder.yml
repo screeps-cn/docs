@@ -21,46 +21,23 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
 
-    - name: Use Node.js 10.x
-      uses: actions/setup-node@v1
+    - name: Use Node.js 20.20.2
+      uses: actions/setup-node@v4
       with:
-        node-version: 10.x
+        node-version: 20.20.2
+        cache: npm
+        cache-dependency-path: |
+          package-lock.json
+          api/package-lock.json
 
-    - name: Cache node modules
-      uses: actions/cache@v1
-      id: cache
-      with:
-        path: node_modules
-        key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-node-
+    - name: Install dependencies
+      run: npm ci
 
-    - name: Cache API modules
-      uses: actions/cache@v1
-      id: cache-api
-      with:
-        path: api/node_modules
-        key: ${{ runner.os }}-node-api-${{ hashFiles('api/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-node-api-        
-
-    - name: Install Dependencies
-      if: steps.cache.outputs.cache-hit != 'true'
-      run: npm install
-
-    - name: Install API Dependencies
-      if: steps.cache-api.outputs.cache-hit != 'true'
-      run: |
-        cd api
-        npm install
-        cd ..
+    - name: Install API dependencies
+      run: npm --prefix api ci
 
     - name: Generate Docs
-      run: |
-        npm run generate
-        cd api
-        npm run generate
-        cd .. 
+      run: npm run generate:all
 
     - name: Upload GitHub Pages artifact
       uses: actions/upload-artifact@v4

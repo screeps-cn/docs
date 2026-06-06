@@ -13,8 +13,6 @@ title: 公共测试领域 (PTR)
 
 <p><strong style="font-size: 20px; background: #eee; padding: 10px 40px;">[链接](https://screeps.com/ptr/)</strong></p>
 
-<p>[更新日志](https://screeps.com/forum/category/8/)</p>
-
 <p>[API 参考](http://docs-ptr.screeps.com/api/)</p> 
 </div>
 

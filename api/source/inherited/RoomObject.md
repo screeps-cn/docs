@@ -1,4 +1,4 @@
-{% api_property effects array %}
+{% api_property RoomObject:effects array %}
 附加的效果，一个包含如下属性的对象数组：
 
 {% api_method_params %}

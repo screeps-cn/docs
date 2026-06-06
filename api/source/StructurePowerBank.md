@@ -25,7 +25,7 @@
     </tbody>
 </table>
 
-{% page inherited/Structure.md %}
+{% page inherited/OwnedStructure.md %}
 
 
 {% api_property power 'number' %}

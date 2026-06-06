@@ -172,7 +172,7 @@ pos : object
 name (可选) : string
 新旗帜的名称。它应该是唯一的，即 <code>Game.flags</code> 不应该包含拥有相同名称（哈希键）的其他旗帜。如果未定义，则会生成随机名称。最长不得超过 100 字符。
 ===
-color (可选) : string
+color (可选) : number
 新旗帜的颜色。应为 <code>COLOR_*</code> 常量之一。默认值为 <code>COLOR_WHITE</code>。
 ===
 secondaryColor (可选) : string
@@ -458,7 +458,7 @@ _.forEach(Game.rooms, room => {
 返回该房间中前一个 tick 发生的事件数组。
 
 {% api_method_params %}
-raw : boolean
+raw (可选) : boolean
 如果该参数为 false 或者未定义，则本方法将会返回使用 `JSON.parse` 解析后的对象，在首次访问时可能会造成一些 CPU 消耗（返回值会被缓存以方便后续调用）。如果 `raw` 为 true。则原始的 JSON 字符串将会被返回。
 {% endapi_method_params %}
 
@@ -496,7 +496,8 @@ raw : boolean
                         <li>`EVENT_ATTACK_TYPE_HIT_BACK` - creep 反击了其他 creep 的 [attack](#Creep.attack) 攻击</li>
                         <li>`EVENT_ATTACK_TYPE_NUKE` - 核弹着陆</li>
                     </ul>
-                </li></ul>
+                </li>
+            </ul>
         </td>
     </tr>
     <tr>
@@ -517,7 +518,11 @@ raw : boolean
             <ul>
                 <li>`targetId` - 目标对象的 ID</li>
                 <li>`amount` - 取得的建造进度</li>
-                <li>`energySpent` - 此次行动消耗的能量</li></ul>
+                <li>`structureType` - 一个 STRUCTURE_* 常量</li>
+                <li>`x` - 目标建造点 X 坐标</li>
+                <li>`y` - 目标建造点 Y 坐标</li>
+                <li>`incomplete` - 建造状态</li>
+	        </ul>
         </td>
     </tr>
     <tr>
@@ -526,7 +531,8 @@ raw : boolean
             一个 creep 在该房间执行了 [`harvest`](#Creep.harvest)。
             <ul>
                 <li>`targetId` - 目标对象的 ID</li>
-                <li>`amount` - 资源采集量</li></ul>
+                <li>`amount` - 资源采集量</li>
+            </ul>
         </td>
     </tr>
     <tr>
@@ -541,7 +547,8 @@ raw : boolean
                         <li>`EVENT_HEAL_TYPE_MELEE` - 一个 creep 使用 [heal](#Creep.heal) 进行了治疗</li>
                         <li>`EVENT_HEAL_TYPE_RANGED` - 一个 creep 使用 [rangedHeal](#Creep.rangedHeal)进行了治疗，或者一个 tower 使用 [heal](#StructureTower.heal) 进行了治疗</li>
                     </ul>
-                </li></ul>
+                </li>
+            </ul>
         </td>
     </tr>
     <tr>
@@ -551,7 +558,7 @@ raw : boolean
             <ul>
                 <li>`targetId` - 目标对象 ID</li>
                 <li>`amount` - hit 修复量</li>
-                <li>`energySpent` - 此次行动消耗的能量</li></ul>
+                <li>`energySpent` - 此次行动消耗的能量</li>
             </ul>
         </td>
     </tr>
@@ -560,7 +567,8 @@ raw : boolean
         <td>
             一个 creep 在该房间执行了 [`reserveController`](#Creep.reserveController)。
             <ul>
-                <li>`amount` - 取得的预定时间</li></ul>
+                <li>`amount` - 取得的预定时间</li>
+            </ul>
         </td>
     </tr>
     <tr>
@@ -569,7 +577,7 @@ raw : boolean
             一个 creep 在该房间执行了 [`upgradeController`](#Creep.upgradeController)。
             <ul>
                 <li>`amount` - 获得的控制点数（control points）</li>
-                <li>`energySpent` - 此次行动消耗的能量</li></ul>
+                <li>`energySpent` - 此次行动消耗的能量</li>
             </ul>
         </td>
     </tr>
@@ -579,7 +587,7 @@ raw : boolean
             一个 creep 移动到了其他房间。
             <ul>
                 <li>`room` - 目标房间的名称</li>
-                <li>`x`, `y` - creep 将要出现在其他房间的坐标位置</li></ul>
+                <li>`x`, `y` - creep 将要出现在其他房间的坐标位置</li>
             </ul>
         </td>
     </tr>
@@ -591,6 +599,16 @@ raw : boolean
                 <li>`targetId` - 目标对象 ID</li>
                 <li>`resourceType` - 被转移的资源类型</li>
                 <li>`amount` - 被转移的资源总量</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>`EVENT_POWER`</td>
+        <td>
+            将一个 `creep` 的 `power` 作用于指定目标.
+            <ul>
+                <li>`targetId` - 目标对象的 ID</li>
+                <li>`power` - 使用 `power` 的能力, PWR_* 常量之一</li>
             </ul>
         </td>
     </tr>
